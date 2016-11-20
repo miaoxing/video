@@ -17,6 +17,7 @@ class Video extends \miaoxing\plugin\BaseController
             $videos->where('categoryId=?', $req['categoryId']);
         }
         $videos = $videos->fetchAll();
+
         return get_defined_vars();
     }
 
@@ -24,6 +25,7 @@ class Video extends \miaoxing\plugin\BaseController
     {
         $headerTitle = '视频';
         $video = wei()->video()->findById($req['id']);
+
         return get_defined_vars();
     }
 
@@ -42,7 +44,7 @@ class Video extends \miaoxing\plugin\BaseController
         ];
 
         switch ($req['_format']) {
-            case 'json' :
+            case 'json':
                 return $this->ret($ret);
             default:
                 return get_defined_vars();
@@ -52,6 +54,7 @@ class Video extends \miaoxing\plugin\BaseController
     public function newAction()
     {
         $htmlTitle = '视频上传';
+
         return get_defined_vars();
     }
 
@@ -66,7 +69,7 @@ class Video extends \miaoxing\plugin\BaseController
             'names' => [
                 'name' => '视频标题',
                 'categoryId' => '视频类型',
-            ]
+            ],
         ]);
         if (!$validator->isValid()) {
             return $this->err($validator->getFirstMessage());
@@ -79,7 +82,7 @@ class Video extends \miaoxing\plugin\BaseController
             'exts' => ['mp4', 'mov'],
             'postMaxSize' => 20 * 1024 * 1024,
             'fileName' => date('YmdHis'),
-            'dir' => wei()->upload->getDir() . '/videos/' . date('Ymd')
+            'dir' => wei()->upload->getDir() . '/videos/' . date('Ymd'),
         ]);
 
         if (!$result) {
@@ -99,14 +102,14 @@ class Video extends \miaoxing\plugin\BaseController
             ]);
 
             // 3. 保存视频信息
-            $data = array(
+            $data = [
                 'name' => $req['name'] ?: '',
                 'description' => $req['description'] ?: '',
                 'url' => $file['url'],
                 'categoryId' => $req['categoryId'] ?: '',
                 'enable' => 1,
-                'type' => 2
-            );
+                'type' => 2,
+            ];
 
             wei()->video()->save($data);
         }

@@ -23,6 +23,7 @@ class Video extends \miaoxing\plugin\BaseController
     {
         $video = wei()->video()->findOrInitById($req['id']);
         $categories = wei()->category()->notDeleted()->withParent('video')->desc('sort')->fetchAll();
+
         return get_defined_vars();
     }
 
@@ -53,16 +54,16 @@ class Video extends \miaoxing\plugin\BaseController
                 foreach ($videos->findAll() as $video) {
                     $category = wei()->category()->notDeleted()->findById($video['categoryId']);
                     $data[] = $video->toArray() + [
-                            'categoryName' => $category['name']
+                            'categoryName' => $category['name'],
                         ];
                 }
 
-                return $this->json('读取列表成功', 1, array(
+                return $this->json('读取列表成功', 1, [
                     'data' => $data,
                     'page' => $req['page'],
                     'rows' => $req['rows'],
                     'records' => $videos->count(),
-                ));
+                ]);
 
             default:
                 return get_defined_vars();
@@ -73,8 +74,9 @@ class Video extends \miaoxing\plugin\BaseController
     {
         $video = wei()->video()->findOneById($req['id']);
         $data = $video->toArray();
+
         return $this->suc([
-            'data' => $data
+            'data' => $data,
         ]);
     }
 
@@ -84,11 +86,11 @@ class Video extends \miaoxing\plugin\BaseController
             'data' => $req,
             'rules' => [
                 'name' => [
-                ]
+                ],
             ],
             'names' => [
-                'name' => '名称'
-            ]
+                'name' => '名称',
+            ],
         ]);
         if (!$validator->isValid()) {
             return $this->err($validator->getFirstMessage());
@@ -101,7 +103,7 @@ class Video extends \miaoxing\plugin\BaseController
             $vid = $pathInfo['filename'];
         }
 
-        $data = array(
+        $data = [
             'name' => $req['name'],
             'description' => $req['description'],
             'url' => $req['url'],
@@ -109,8 +111,8 @@ class Video extends \miaoxing\plugin\BaseController
             'pic' => $req['pic'],
             'categoryId' => $req['categoryId'],
             'enable' => 1,
-            'type' => $req['type'] ?: 1
-        );
+            'type' => $req['type'] ?: 1,
+        ];
 
         wei()->video()->findOrInitById($req['id'])->save($data);
 
@@ -123,6 +125,7 @@ class Video extends \miaoxing\plugin\BaseController
     public function destroyAction($req)
     {
         wei()->video()->notDeleted()->findOne($req['id'])->softDelete();
+
         return $this->suc();
     }
 
@@ -130,6 +133,7 @@ class Video extends \miaoxing\plugin\BaseController
     {
         $video = wei()->video()->findOneById($req['id']);
         $ret = wei()->audit->audit($video, $req['pass'], $req['description']);
+
         return $this->ret($ret);
     }
 }
