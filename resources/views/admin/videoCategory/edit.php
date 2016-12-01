@@ -18,11 +18,11 @@
     <!-- PAGE CONTENT BEGINS -->
     <form id="category-form" class="form-horizontal" method="post" role="form">
       <div class="form-group">
-        <label class="col-lg-2 control-label" for="parentId">
+        <label class="col-lg-2 control-label" for="parent-id">
           所属栏目
         </label>
         <div class="col-lg-4">
-          <select name="parentId" id="parentId" class="form-control">
+          <select name="parentId" id="parent-id" class="form-control">
             <option value="video">根栏目</option>
           </select>
         </div>
@@ -64,7 +64,10 @@
 
 <?= $block('js') ?>
 <script>
-  require(['form', 'validator'], function () {
+  require(['form', 'validator'], function (form) {
+    var categoryJson = <?= json_encode(wei()->category()->notDeleted()->withParent('video')->getTreeToArray()) ?>;
+    form.toOptions($('#parent-id'), categoryJson, 'id', 'name');
+
     var category = <?= $category->toJson() ?>;
     $('#category-form')
       .loadJSON(category)

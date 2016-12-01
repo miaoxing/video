@@ -1,6 +1,7 @@
 <?php
 
 namespace plugins\video\docs {
+
     /**
      * @property    \Miaoxing\Video\Service\Video $video 视频
      * @method      \Miaoxing\Video\Service\Video|\Miaoxing\Video\Service\Video[] video()
@@ -11,6 +12,7 @@ namespace plugins\video\docs {
 }
 
 namespace {
+
     /**
      * @return \plugins\video\docs\AutoComplete
      */

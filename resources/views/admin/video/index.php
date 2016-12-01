@@ -27,10 +27,10 @@
         <div class="well form-well m-b">
           <div class="form-group form-group-sm">
 
-            <label class="col-md-1 control-label" for="categoryId">栏目：</label>
+            <label class="col-md-1 control-label" for="category-id">栏目：</label>
 
             <div class="col-md-3">
-              <select class="form-control" name="categoryId" id="categoryId">
+              <select class="form-control" name="categoryId" id="category-id">
                 <option value="">全部栏目</option>
               </select>
             </div>
@@ -50,13 +50,13 @@
       <table class="table table-bordered table-hover js-record-table record-table">
         <thead>
         <tr>
-          <th style="width: 120px;">栏目名称</th>
-          <th style="width: 90px;">类型</th>
-          <th style="width: 150px;">标题</th>
-          <th style="width: 200px;">描述</th>
+          <th class="t-6">栏目名称</th>
+          <th class="t-4">类型</th>
+          <th class="t-10">标题</th>
+          <th class="t-10">描述</th>
           <th>视频链接</th>
           <?php wei()->event->trigger('tableCol', ['video']); ?>
-          <th style="width: 200px;">操作</th>
+          <th class="t-10">操作</th>
         </tr>
         </thead>
         <tbody>
@@ -110,8 +110,8 @@
     <% } %>
 
     <a class="text-danger delete-record"
-       data-href="<%= $.url('admin/video/destroy', {id: id}) %>"
-       href="javascript:;" title="删除">
+      data-href="<%= $.url('admin/video/destroy', {id: id}) %>"
+      href="javascript:;" title="删除">
       <i class="fa fa-trash-o bigger-130"></i>
     </a>
   </div>
@@ -120,7 +120,8 @@
 <?= $block('js') ?>
 <script>
   require(['form', 'dataTable', 'template', 'jquery-deparam'], function (form) {
-    form.toOptions($('#categoryId'), <?= json_encode(wei()->category()->notDeleted()->withParent('video')->getTreeToArray()) ?>, 'id', 'name');
+    var categoryJson = <?= json_encode(wei()->category()->notDeleted()->withParent('video')->getTreeToArray()); ?>;
+    form.toOptions($('#category-id'), categoryJson, 'id', 'name');
 
     $('#search-form').loadParams().update(function () {
       recordTable.reload($(this).serialize(), false);
@@ -137,7 +138,7 @@
         {
           data: 'type',
           render: function (data, type, full) {
-            if(data == 1) {
+            if (data == 1) {
               return '外部链接';
             }
             return '上传链接';
@@ -154,7 +155,7 @@
           data: 'url',
           sClass: 'text-left',
           render: function (data, type, full) {
-            return '(<a class="text-danger" href="'+data+'" target="_blank">点击</a>) ' + data
+            return '(<a class="text-danger" href="' + data + '" target="_blank">点击</a>) ' + data
           }
         },
         <?php wei()->event->trigger('tableData', ['video']); ?>
@@ -179,7 +180,7 @@
         }
 
         // 关闭modal的时候需要停止播放
-        $('body').on('hidden.bs.modal', function() {
+        $('body').on('hidden.bs.modal', function () {
           $('body').find('.js-video-play').get(0).pause();
         });
       });

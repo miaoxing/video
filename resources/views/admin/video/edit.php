@@ -30,13 +30,13 @@
       </div>
 
       <div class="form-group">
-        <label class="col-sm-2 control-label" for="categoryId">
+        <label class="col-sm-2 control-label" for="category-id">
           <span class="text-warning">*</span>
           栏目
         </label>
 
         <div class="col-sm-4">
-          <select class="form-control" name="categoryId" id="categoryId" data-rule-required="true">
+          <select class="form-control" name="categoryId" id="category-id" data-rule-required="true">
             <option value="" selected>无</option>
           </select>
         </div>
@@ -114,7 +114,8 @@
 <?= $block('js') ?>
 <script>
   require(['form', 'ueditor', 'validator'], function (form) {
-    form.toOptions($('#categoryId'), <?= json_encode(wei()->category()->notDeleted()->withParent('video')->getTreeToArray()) ?>, 'id', 'name');
+    var categoryJson = <?= json_encode(wei()->category()->notDeleted()->withParent('video')->getTreeToArray()) ?>;
+    form.toOptions($('#category-id'), categoryJson, 'id', 'name');
 
     var video = <?= $video->toJson() ?>;
     $('.js-video-form')

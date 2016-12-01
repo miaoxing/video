@@ -7,7 +7,8 @@ class Video extends \miaoxing\plugin\BaseModel
     public function getPic($vid)
     {
         $tot = 0;
-        for ($i = 0; $i < strlen($vid); ++$i) {
+        $len = strlen($vid);
+        for ($i = 0; $i < $len; ++$i) {
             $tot = ($tot << 5) + $tot + $vid[$i];
         }
         $path = $tot % (10000 * 10000);

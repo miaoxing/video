@@ -2,9 +2,6 @@
 
 <?= $block('css') ?>
 <link rel="stylesheet" href="<?= $asset('plugins/video/css/video.css') ?>">
-<style>
-
-</style>
 <?= $block->end() ?>
 
 <form class="form">
@@ -20,13 +17,13 @@
   </div>
 
   <div class="form-group">
-    <label for="categoryId" class="control-label">
+    <label for="category-id" class="control-label">
       视频类型
       <span class="text-warning">*</span>
     </label>
 
     <div class="col-control">
-      <select id="categoryId" name="categoryId" class="form-control">
+      <select id="category-id" name="categoryId" class="form-control">
         <option value="">请选择</option>
         <?= wei()->video->getCategoryToOptions(); ?>
       </select>
@@ -42,27 +39,26 @@
   </div>
 
   <div class="form-group">
-    <label for="file" class="control-label">
+    <label for="file-name-input" class="control-label">
       视频上传
       <span class="text-warning">*</span>
     </label>
 
     <div class="col-control">
       <div class="input-group">
-        <input type="text" class="form-control" id="fileNameInput" name="fileNameInput" placeholder="选择文件" readonly>
+        <input type="text" class="form-control" id="file-name-input" name="fileNameInput" placeholder="选择文件" readonly>
         <span class="input-group-btn border-left">
-          <button type="button" class="text-primary btn btn-default form-link btn-file">
+          <button type="button" class="text-primary btn btn-default form-link btn-file js-btn-file">
             选择文件
-            <input type="file" accept="video/*" class="js-file" id="file" name="file">
           </button>
         </span>
       </div>
     </div>
   </div>
 
-  <div id="fileName" class="tip"></div>
-  <div id="fileSize" class="tip"></div>
-  <div id="fileType" class="tip"></div>
+  <div id="file-name" class="tip"></div>
+  <div id="file-size" class="tip"></div>
+  <div id="file-type" class="tip"></div>
 
   <div class="form-footer">
     <div class="btn btn-primary btn-block js-submit">上 传</div>
@@ -72,6 +68,8 @@
 <?= $block('js') ?>
 <script>
   require(['jquery-form', 'plugins/video/comps/AjaxFileUpload/ajaxfileupload'], function () {
+    $('.js-btn-file').append('<input type="file" accept="video/*" class="js-file" id="file" name="file" />');
+
     $('.js-file').change(function () {
       var file = $('#file').get(0).files[0];
       if (file) {
@@ -82,10 +80,10 @@
           fileSize = (Math.round(file.size * 100 / 1024) / 100).toString() + 'KB';
         }
 
-        $('#fileName').html('文件名: ' + file.name);
-        $('#fileSize').html('文件大小: ' + fileSize);
-        $('#fileType').html('文件类型: ' + file.type);
-        $('#fileNameInput').val(file.name);
+        $('#file-name').html('文件名: ' + file.name);
+        $('#file-size').html('文件大小: ' + fileSize);
+        $('#file-type').html('文件类型: ' + file.type);
+        $('#file-name-input').val(file.name);
       }
     });
 
@@ -97,7 +95,7 @@
         loading: true,
         data: {
           name: $('#name').val(),
-          categoryId: $('#categoryId').val(),
+          categoryId: $('#category-id').val(),
           description: $('#description').val()
         },
         dataType: 'json', //返回值类型 一般设置为json

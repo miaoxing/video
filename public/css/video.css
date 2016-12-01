@@ -15,7 +15,7 @@
 }
 
 .video-item {
-  margin-left: 0;
+  margin-left: 0 !important;
   padding-bottom: 10px;
   border-bottom: 1px #ccc;
   background: #f2f2f2;
