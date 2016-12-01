@@ -71,7 +71,7 @@
 
 <?= $block('js') ?>
 <script>
-  require(['jquery-form', 'plugins/video/js/ajaxfileupload'], function () {
+  require(['jquery-form', 'plugins/video/comps/AjaxFileUpload/ajaxfileupload'], function () {
     $('.js-file').change(function () {
       var file = $('#file').get(0).files[0];
       if (file) {
