@@ -96,8 +96,8 @@ class Video extends \miaoxing\plugin\BaseController
             return $this->err($validator->getFirstMessage());
         }
 
-        $r = parse_url($req['url']);
-        parse_str($r['query']);
+        $urlQuery = parse_url($req['url']);
+        parse_str($urlQuery['query']);
         if (!$vid) {
             $pathInfo = pathinfo($req['url']);
             $vid = $pathInfo['filename'];
