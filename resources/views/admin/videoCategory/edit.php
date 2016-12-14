@@ -1,7 +1,7 @@
 <?php $view->layout() ?>
 <div class="page-header">
   <div class="pull-right">
-    <a class="btn" href="<?= $url('admin/videoCategory/index') ?>">返回列表</a>
+    <a class="btn btn-default" href="<?= $url('admin/videoCategory/index') ?>">返回列表</a>
   </div>
   <h1>
     微官网
@@ -50,7 +50,7 @@
             提交
           </button>
           &nbsp; &nbsp; &nbsp;
-          <a class="btn" href="<?= $url('admin/videoCategory/index') ?>">
+          <a class="btn btn-default" href="<?= $url('admin/videoCategory/index') ?>">
             <i class="fa fa-undo"></i>
             返回列表
           </a>

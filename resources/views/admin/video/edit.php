@@ -1,7 +1,7 @@
 <?php $view->layout() ?>
 <div class="page-header">
   <div class="pull-right">
-    <a class="btn" href="<?= $url('admin/video/index') ?>">返回列表</a>
+    <a class="btn btn-default" href="<?= $url('admin/video/index') ?>">返回列表</a>
   </div>
   <h1>
     微官网
@@ -99,7 +99,7 @@
           </button>
           <?php $event->trigger('renderAdminFormActions', ['video']) ?>
           &nbsp; &nbsp; &nbsp;
-          <a class="btn" href="<?= $url('admin/video/index') ?>">
+          <a class="btn btn-default" href="<?= $url('admin/video/index') ?>">
             <i class="fa fa-undo"></i>
             返回列表
           </a>
