@@ -11,7 +11,7 @@ class V20161120164720CreateVideoTable extends BaseMigration
      */
     public function up()
     {
-        $this->scheme->table('video')
+        $this->schema->table('video')
             ->id()
             ->int('categoryId')
             ->string('url')
@@ -34,6 +34,6 @@ class V20161120164720CreateVideoTable extends BaseMigration
      */
     public function down()
     {
-        $this->scheme->dropIfExists('video');
+        $this->schema->dropIfExists('video');
     }
 }
