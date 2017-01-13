@@ -4,6 +4,13 @@
 <link rel="stylesheet" href="<?= $asset('plugins/video/css/video.css') ?>">
 <?= $block->end() ?>
 
+<?php if ($video['pic']) : ?>
+  <!-- 分享图 -->
+  <div class="hide">
+    <img src="<?= $e($video['pic']) ?>">
+  </div>
+<?php endif ?>
+
 <div class="video">
   <div class="text-center">
     <div id="player"></div>
@@ -29,7 +36,7 @@
       height: $(window).width()*0.75,
       video: video,
       modId: "player",
-      autoplay: false
+      autoplay: true
     });
   });
 </script>
