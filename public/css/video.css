@@ -14,8 +14,7 @@
   background: #fff;
 }
 
-li.video-item {
-  margin-left: 0;
+.video-item {
   padding-bottom: 10px;
   border-bottom: 1px #ccc;
   background: #f2f2f2;

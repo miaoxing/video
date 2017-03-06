@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="<?= $asset('plugins/video/css/video.css') ?>">
 <?= $block->end() ?>
 
-<ul class="js-video-list list list-indented">
+<ul class="js-video-list list">
 </ul>
 
 <script type="text/html" class="js-video-item-tpl">
