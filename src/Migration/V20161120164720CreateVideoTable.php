@@ -21,7 +21,7 @@ class V20161120164720CreateVideoTable extends BaseMigration
             ->mediumText('description')
             ->bool('enable')
             ->tinyInt('type', 1)->defaults(1)->comment('1是外部链接，2是上传链接')
-            ->timestamps()
+            ->timestampsV1()
             ->int('createUser')
             ->int('updateUser')
             ->timestamp('deleteTime')
