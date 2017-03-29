@@ -10,7 +10,7 @@
     <a class="btn btn-success" href="<?= $url('admin/video-category') ?>">栏目管理</a>
   </div>
   <h1>
-    微官网
+    视频管理
     <small>
       <i class="fa fa-angle-double-right"></i>
       视频列表
@@ -104,14 +104,14 @@
     </a>
 
     <% } else if(type == 2) { %>
-    <a href="javascript:;" class="js-show" title="查看" data-id="<%= id %>">
+    <a href="javascript:" class="js-show" title="查看" data-id="<%= id %>">
       <i class="fa fa-search-plus bigger-130"></i>
     </a>
     <% } %>
 
     <a class="text-danger delete-record"
       data-href="<%= $.url('admin/video/destroy', {id: id}) %>"
-      href="javascript:;" title="删除">
+      href="javascript:" title="删除">
       <i class="fa fa-trash-o bigger-130"></i>
     </a>
   </div>

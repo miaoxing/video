@@ -4,7 +4,7 @@
     <a class="btn btn-default" href="<?= $url('admin/video/index') ?>">返回列表</a>
   </div>
   <h1>
-    微官网
+    视频管理
     <small>
       <i class="fa fa-angle-double-right"></i>
       视频列表

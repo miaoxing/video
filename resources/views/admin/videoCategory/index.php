@@ -8,7 +8,7 @@
     </form>
   </div>
   <h1>
-    微官网
+    视频管理
     <small>
       <i class="fa fa-angle-double-right"></i>
       视频标签列表
@@ -45,7 +45,7 @@
       <i class="fa fa-edit bigger-130"></i>
     </a>
     <a class="text-danger delete-record" data-href="<%= $.url('admin/videoCategory/destroy', {id: id}) %>"
-      href="javascript:;" title="删除">
+      href="javascript:" title="删除">
       <i class="fa fa-trash-o bigger-130"></i>
     </a>
   </div>
