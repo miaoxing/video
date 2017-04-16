@@ -48,14 +48,9 @@
         </label>
 
         <div class="col-lg-4">
-          <div class="input-group">
-            <input type="text" class="form-control js-thumb" id="pic" name="pic">
-            <span class="input-group-btn">
-                <button id="select-thumb" class="btn btn-white" type="button">
-                  <i class="fa fa-picture-o"></i>
-                  选择图片
-                </button>
-            </span>
+          <div class="input-group js-upload-container">
+            <input type="file" class="js-image-upload"/>
+            <input type="hidden" id="pic" name="pic" class="js-image-url"/>
           </div>
         </div>
         <label class="col-lg-6 help-text" for="no">
@@ -113,7 +108,7 @@
 
 <?= $block('js') ?>
 <script>
-  require(['form', 'ueditor', 'validator'], function (form) {
+  require(['form', 'ueditor', 'validator', 'plugins/admin/js/image-input'], function (form) {
     var categoryJson = <?= json_encode(wei()->category()->notDeleted()->withParent('video')->getTreeToArray()) ?>;
     form.toOptions($('#category-id'), categoryJson, 'id', 'name');
 
@@ -136,7 +131,7 @@
       });
 
     // 点击选择图片
-    $('.js-thumb').imageInput();
+    $('input[type="file"].js-image-upload').imageUploadInput();
   });
 </script>
 <?= $block->end() ?>
