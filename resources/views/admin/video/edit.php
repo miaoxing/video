@@ -54,7 +54,7 @@
           </div>
         </div>
         <label class="col-lg-6 help-text" for="no">
-          支持JPG、PNG格式，建议大图900像素 * 500像素，小图200像素 * 200像素，小于1M
+          支持JPG、PNG格式，建议大图900像素 * 500像素，小图200像素 * 200像素，小于2M
         </label>
       </div>
 
