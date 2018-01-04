@@ -2,7 +2,7 @@
 
 namespace Miaoxing\Video\Service;
 
-class Video extends \miaoxing\plugin\BaseModel
+class Video extends \Miaoxing\Plugin\BaseModel
 {
     public function getPic($vid)
     {
