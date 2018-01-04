@@ -2,7 +2,7 @@
 
 namespace Miaoxing\Video\Controller\Admin;
 
-class Video extends \miaoxing\plugin\BaseController
+class Video extends \Miaoxing\Plugin\BaseController
 {
     protected $controllerName = '视频管理';
 

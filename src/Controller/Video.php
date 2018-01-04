@@ -4,7 +4,7 @@ namespace Miaoxing\Video\Controller;
 
 use Miaoxing\File\Service\File;
 
-class Video extends \miaoxing\plugin\BaseController
+class Video extends \Miaoxing\Plugin\BaseController
 {
     protected $guestPages = ['video'];
 
