@@ -1,6 +1,6 @@
 <?php $view->layout() ?>
 
-<?= $block('css') ?>
+<?= $block->css() ?>
 <link rel="stylesheet" href="<?= $asset('plugins/video/css/video.css') ?>">
 <?= $block->end() ?>
 
@@ -65,7 +65,7 @@
   </div>
 </form>
 
-<?= $block('js') ?>
+<?= $block->js() ?>
 <script>
   require(['jquery-form', 'plugins/video/comps/AjaxFileUpload/ajaxfileupload'], function () {
     $('.js-btn-file').append('<input type="file" accept="video/*" class="js-file" id="file" name="file" />');

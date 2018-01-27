@@ -1,6 +1,6 @@
 <?php $view->layout() ?>
 
-<?= $block('css') ?>
+<?= $block->css() ?>
 <link rel="stylesheet" href="<?= $asset('plugins/video/css/video.css') ?>">
 <?= $block->end() ?>
 
@@ -25,7 +25,7 @@
   </div>
 </div>
 
-<?= $block('js') ?>
+<?= $block->js() ?>
 <script>
   require(['//imgcache.gtimg.cn/tencentvideo_v1/tvp/js/tvp.player_v2_mobile.js'], function () {
     var video = new tvp.VideoInfo();

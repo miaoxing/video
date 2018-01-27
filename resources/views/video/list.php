@@ -1,6 +1,6 @@
 <?php $view->layout() ?>
 
-<?= $block('css') ?>
+<?= $block->css() ?>
 <link rel="stylesheet" href="<?= $asset('plugins/video/css/video.css') ?>">
 <?= $block->end() ?>
 
@@ -25,7 +25,7 @@
   </li>
 </script>
 
-<?= $block('js') ?>
+<?= $block->js() ?>
 <script>
   require([
     'comps/artTemplate/template.min',

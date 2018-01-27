@@ -1,6 +1,6 @@
 <?php $view->layout('plugin:layouts/jqm.php') ?>
 
-<?= $block('css') ?>
+<?= $block->css() ?>
 <link rel="stylesheet" href="<?= $asset(['assets/buttonsRow.css', 'assets/apps/video.css']) ?>"/>
 <?= $block->end() ?>
 

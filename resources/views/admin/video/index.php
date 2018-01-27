@@ -1,6 +1,6 @@
 <?php $view->layout() ?>
 
-<?= $block('css') ?>
+<?= $block->css() ?>
 <link rel="stylesheet" href="<?= $asset('plugins/admin/css/filter.css') ?>"/>
 <?= $block->end() ?>
 
@@ -117,7 +117,7 @@
   </div>
 </script>
 
-<?= $block('js') ?>
+<?= $block->js() ?>
 <script>
   require(['form', 'dataTable', 'template', 'jquery-deparam'], function (form) {
     var categoryJson = <?= json_encode(wei()->category()->notDeleted()->withParent('video')->getTreeToArray()); ?>;
