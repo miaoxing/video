@@ -43,17 +43,14 @@
       </div>
 
       <div class="form-group">
-        <label class="col-lg-2 control-label" for="thumb">
+        <label class="col-lg-2 control-label" for="pic">
           封面
         </label>
 
         <div class="col-lg-4">
-          <div class="input-group js-upload-container">
-            <input type="file" class="js-image-upload"/>
-            <input type="hidden" id="pic" name="pic" class="js-image-url"/>
-          </div>
+          <input type="text" id="pic" name="pic" class="js-pic">
         </div>
-        <label class="col-lg-6 help-text" for="no">
+        <label class="col-lg-6 help-text" for="pic">
           支持JPG、PNG格式，建议大图900像素 * 500像素，小图200像素 * 200像素，小于2M
         </label>
       </div>
@@ -108,7 +105,7 @@
 
 <?= $block->js() ?>
 <script>
-  require(['form', 'ueditor', 'validator', 'plugins/admin/js/image-input'], function (form) {
+  require(['form', 'ueditor', 'validator', 'plugins/admin/js/image-upload'], function (form) {
     var categoryJson = <?= json_encode(wei()->category()->notDeleted()->withParent('video')->getTreeToArray()) ?>;
     form.toOptions($('#category-id'), categoryJson, 'id', 'name');
 
@@ -130,8 +127,7 @@
         }
       });
 
-    // 点击选择图片
-    $('input[type="file"].js-image-upload').imageUploadInput();
+    $('.js-pic').imageUpload();
   });
 </script>
 <?= $block->end() ?>
