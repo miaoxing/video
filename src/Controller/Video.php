@@ -53,7 +53,7 @@ class Video extends \Miaoxing\Plugin\BaseController
 
     public function newAction()
     {
-        $htmlTitle = '视频上传';
+        $this->page->setTitle('视频上传');
 
         return get_defined_vars();
     }
