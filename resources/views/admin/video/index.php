@@ -1,22 +1,14 @@
 <?php $view->layout() ?>
 
+<?= $block('header-actions') ?>
+<a class="btn btn-success" href="<?= $url('admin/video/new') ?>">添加视频</a>
+<a class="btn btn-success" href="<?= $url('admin/video-category') ?>">栏目管理</a>
+<?= $block->end() ?>
+
 <?= $block->css() ?>
 <link rel="stylesheet" href="<?= $asset('plugins/admin/css/filter.css') ?>"/>
 <?= $block->end() ?>
 
-<div class="page-header">
-  <div class="pull-right">
-    <a class="btn btn-success" href="<?= $url('admin/video/new') ?>">添加视频</a>
-    <a class="btn btn-success" href="<?= $url('admin/video-category') ?>">栏目管理</a>
-  </div>
-  <h1>
-    视频管理
-    <small>
-      <i class="fa fa-angle-double-right"></i>
-      视频列表
-    </small>
-  </h1>
-</div>
 <!-- /.page-header -->
 <div class="row">
   <div class="col-xs-12">

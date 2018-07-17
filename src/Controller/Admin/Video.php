@@ -14,6 +14,8 @@ class Video extends \Miaoxing\Plugin\BaseController
         'audit' => '审核',
     ];
 
+    protected $displayPageHeader = true;
+
     public function newAction($req)
     {
         return $this->editAction($req);
