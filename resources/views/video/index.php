@@ -1,7 +1,8 @@
 <?php $view->layout('@plugin/layouts/jqm.php') ?>
 
 <?= $block->css() ?>
-<link rel="stylesheet" href="<?= $asset(['assets/buttonsRow.css', 'assets/apps/video.css']) ?>"/>
+<link rel="stylesheet" href="<?= $asset('assets/buttonsRow.css') ?>"/>
+<link rel="stylesheet" href="<?= $asset('assets/apps/video.css') ?>"/>
 <?= $block->end() ?>
 
 <div data-role="content">
