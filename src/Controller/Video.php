@@ -10,7 +10,7 @@ class Video extends \Miaoxing\Plugin\BaseController
 
     public function indexAction($req)
     {
-        $headerTitle = '视频列表';
+        $this->page->setTitle('视频列表');
         $categories = wei()->category()->notDeleted()->withParent('video')->desc('sort')->fetchAll();
         $videos = wei()->video()->orderBy('id', 'desc');
         if ($req['categoryId']) {
@@ -23,7 +23,7 @@ class Video extends \Miaoxing\Plugin\BaseController
 
     public function showAction($req)
     {
-        $headerTitle = '视频';
+        $this->page->setTitle('视频');
         $video = wei()->video()->findById($req['id']);
 
         return get_defined_vars();
