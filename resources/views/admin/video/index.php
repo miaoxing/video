@@ -67,7 +67,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title" id="showModalLabel">视频查看</h4>
+          <h5 class="modal-title" id="showModalLabel">视频查看</h5>
         </div>
         <div class="modal-body">
           <video src="<%= url %>" controls="controls" class="js-video-play" width="100%" height="100%">
