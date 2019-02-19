@@ -9,7 +9,7 @@ class Video extends \Miaoxing\Plugin\BaseModel
         $tot = 0;
         $len = strlen($vid);
         for ($i = 0; $i < $len; ++$i) {
-            $tot = ($tot << 5) + $tot + $vid[$i];
+            $tot = ($tot << 5) + $tot + (int) $vid[$i];
         }
         $path = $tot % (10000 * 10000);
 

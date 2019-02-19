@@ -1,4 +1,7 @@
-<?php $view->layout('@plugin/layouts/jqm.php') ?>
+<?php
+
+$view->layout();
+?>
 
 <?= $block->css() ?>
 <link rel="stylesheet" href="<?= $asset('assets/buttonsRow.css') ?>"/>
