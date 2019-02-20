@@ -96,7 +96,7 @@
 
 <?= $block->js() ?>
 <script>
-  require(['form', 'ueditor', 'validator', 'plugins/admin/js/image-upload'], function (form) {
+  require(['form', 'ueditor', 'plugins/app/js/validation', 'plugins/admin/js/image-upload'], function (form) {
     var categoryJson = <?= json_encode(wei()->category()->notDeleted()->withParent('video')->getTreeToArray()) ?>;
     form.toOptions($('#category-id'), categoryJson, 'id', 'name');
 
