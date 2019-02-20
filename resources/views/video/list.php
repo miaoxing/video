@@ -1,7 +1,7 @@
 <?php $view->layout() ?>
 
 <?= $block->css() ?>
-<link rel="stylesheet" href="<?= $asset('plugins/video/css/video.css') ?>">
+<link rel="stylesheet" href="<?= $asset('plugins/video/css/videos.css') ?>">
 <?= $block->end() ?>
 
 <ul class="js-video-list list">

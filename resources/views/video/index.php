@@ -4,8 +4,7 @@ $view->layout();
 ?>
 
 <?= $block->css() ?>
-<link rel="stylesheet" href="<?= $asset('assets/buttonsRow.css') ?>"/>
-<link rel="stylesheet" href="<?= $asset('assets/apps/video.css') ?>"/>
+<link rel="stylesheet" href="<?= $asset('plugins/video/css/videos.css') ?>"/>
 <?= $block->end() ?>
 
 <div data-role="content">
