@@ -28,7 +28,7 @@
 <?= $block->js() ?>
 <script>
   require([
-    'comps/artTemplate/template.min',
+    'plugins/app/libs/artTemplate/template.min',
     'comps/dropdown-menu/dropdown-menu',
     '//imgcache.gtimg.cn/tencentvideo_v1/tvp/js/tvp.player_v2_mobile.js'
   ], function () {
