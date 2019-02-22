@@ -53,7 +53,7 @@
 
 <?= $block->js() ?>
 <script>
-  require(['plugins/admin/js/data-table', 'template', 'form'], function () {
+  require(['plugins/admin/js/data-table', plugins/app/libs/artTemplate/template.min, 'form'], function () {
     $('#search-form').loadParams().update(function () {
       recordTable.reload($(this).serialize());
     });
