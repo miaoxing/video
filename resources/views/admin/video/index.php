@@ -111,7 +111,7 @@
 
 <?= $block->js() ?>
 <script>
-  require(['form', 'plugins/admin/js/data-table', 'plugins/app/libs/artTemplate/template.min'], function (form) {
+  require(['plugins/admin/js/form', 'plugins/admin/js/data-table', 'plugins/app/libs/artTemplate/template.min'], function (form) {
     var categoryJson = <?= json_encode(wei()->category()->notDeleted()->withParent('video')->getTreeToArray()); ?>;
     form.toOptions($('#category-id'), categoryJson, 'id', 'name');
 
