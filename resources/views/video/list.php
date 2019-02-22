@@ -33,7 +33,6 @@
     'comps/dropdown-menu/dropdown-menu',
     '//imgcache.gtimg.cn/tencentvideo_v1/tvp/js/tvp.player_v2_mobile.js'
   ], function () {
-    template.helper('$', $);
 
     var list = $('.js-video-list').list({
       url: '<?= $url->query('video/list.json') ?>',
