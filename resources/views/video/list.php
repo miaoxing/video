@@ -29,6 +29,7 @@
 <script>
   require([
     'plugins/app/libs/artTemplate/template.min',
+    'plugins/app/libs/jquery-list/jquery-list',
     'comps/dropdown-menu/dropdown-menu',
     '//imgcache.gtimg.cn/tencentvideo_v1/tvp/js/tvp.player_v2_mobile.js'
   ], function () {
