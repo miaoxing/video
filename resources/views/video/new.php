@@ -67,7 +67,7 @@
 
 <?= $block->js() ?>
 <script>
-  require(['jquery-form', 'plugins/video/comps/AjaxFileUpload/ajaxfileupload'], function () {
+  require(['plugins/app/libs/jquery-form/jquery.form', 'plugins/video/comps/AjaxFileUpload/ajaxfileupload'], function () {
     $('.js-btn-file').append('<input type="file" accept="video/*" class="js-file" id="file" name="file" />');
 
     $('.js-file').change(function () {
