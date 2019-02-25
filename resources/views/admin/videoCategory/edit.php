@@ -1,6 +1,6 @@
 <?php $view->layout() ?>
 <div class="page-header">
-  <div class="pull-right">
+  <div class="float-right">
     <a class="btn btn-default" href="<?= $url('admin/videoCategory/index') ?>">返回列表</a>
   </div>
   <h1>

@@ -1,7 +1,7 @@
 <?php $view->layout() ?>
 
 <div class="page-header">
-  <div class="pull-right">
+  <div class="float-right">
     <form id="video-form" class="form-horizontal" method="post" role="form">
       <a class="btn btn-success" href="<?= $url('admin/video-category/new') ?>">添加栏目</a>
       <a class="btn btn-default" href="<?= $url('admin/video/index') ?>">返回列表</a>
