@@ -1,7 +1,7 @@
 <?php $view->layout() ?>
 
 <?= $block('header-actions') ?>
-<a class="btn btn-default" href="<?= $url('admin/video/index') ?>">返回列表</a>
+<a class="btn btn-secondary" href="<?= $url('admin/video/index') ?>">返回列表</a>
 <?= $block->end() ?>
 
 <div class="row">
@@ -82,7 +82,7 @@
           </button>
           <?php $event->trigger('renderAdminFormActions', ['video']) ?>
           &nbsp; &nbsp; &nbsp;
-          <a class="btn btn-default" href="<?= $url('admin/video/index') ?>">
+          <a class="btn btn-secondary" href="<?= $url('admin/video/index') ?>">
             <i class="fa fa-undo"></i>
             返回列表
           </a>
