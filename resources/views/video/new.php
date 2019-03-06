@@ -47,8 +47,8 @@
     <div class="col-control">
       <div class="input-group">
         <input type="text" class="form-control" id="file-name-input" name="fileNameInput" placeholder="选择文件" readonly>
-        <span class="input-group-btn border-left">
-          <button type="button" class="text-primary btn btn-secondary form-link btn-file js-btn-file">
+        <span class="input-group-append">
+          <button type="button" class="btn btn-outline-primary btn-file js-btn-file">
             选择文件
           </button>
         </span>
