@@ -64,7 +64,7 @@
 
 <?= $block->js() ?>
 <script>
-  require(['form', 'plugins/app/js/validation'], function (form) {
+  require(['plugins/admin/js/form', 'plugins/app/js/validation'], function (form) {
     var categoryJson = <?= json_encode(wei()->category()->notDeleted()->withParent('video')->getTreeToArray()) ?>;
     form.toOptions($('#parent-id'), categoryJson, 'id', 'name');
 
