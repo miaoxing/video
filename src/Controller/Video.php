@@ -80,7 +80,6 @@ class Video extends \Miaoxing\Plugin\BaseController
         $result = $upload([
             'name' => '视频',
             'exts' => ['mp4', 'mov'],
-            'postMaxSize' => 20 * 1024 * 1024,
             'fileName' => date('YmdHis'),
             'dir' => wei()->upload->getDir() . '/videos/' . date('Ymd'),
         ]);
