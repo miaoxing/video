@@ -10,6 +10,9 @@ class Video extends \Miaoxing\Plugin\BaseController
 
     public function indexAction($req)
     {
+        var_dump($_SERVER);die;
+
+
         $this->page->setTitle('视频列表');
         $categories = wei()->category()->notDeleted()->withParent('video')->desc('sort')->fetchAll();
         $videos = wei()->video()->orderBy('id', 'desc');
